@@ -5,7 +5,7 @@ html(lang='en')
 
         meta(charset='utf-8')
         meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
-        meta(name='description', content='')
+        meta(name='description', content='Stjärnholm Medical AB är ett företag med läkarkompetens inom barn- och ungdomsmedicin, skolhälsovård, företagshälsovård, dykmedicin och infektionsmedicin.')
         meta(name='author', content='')
 
         title Stjärnholm Medical AB
@@ -15,6 +15,9 @@ html(lang='en')
 
         // Bootstrap icons
         link(href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css', rel='stylesheet', type='text/css')
+
+        // FontAwesome JS
+        script(defer='' src='assets/fontawesome/js/all.min.js')
 
         // Google fonts
         link(href='https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic', rel='stylesheet', type='text/css')
@@ -27,8 +30,11 @@ html(lang='en')
         // Navigation
         nav.navbar.navbar-light.bg-light.static-top
             .container
-                a.navbar-brand(href='#!') Start Bootstrap
-                a.btn.btn-primary(href='#signup') Sign Up
+                a.navbar-brand(href='') Stjärnholm Medical AB
+                //- a.navbar-brand(href='') 
+                //-     img(src="assets/img/logo_500x58.jpg" alt="Stjärnholm Medical AB" height=30)
+                //- a.btn.btn-primary(href='#signup') Kontakta oss 
+                a.btn.btn-primary(data-target='#ContactUsModal' data-toggle='modal' href='#ContactUs' data-bs-toggle='modal' data-bs-target='#ContactUsModal') Kontakta oss
 
         // Masthead
         header.masthead
@@ -37,52 +43,103 @@ html(lang='en')
                     .col-xl-6
                         .text-center.text-white
                             // Page heading
-                            h1.mb-5 Generate more leads with a professional landing page!
+                            h3.mb-5 Stjärnholm Medical AB är ett företag med läkarkompetens inom barn- och ungdomsmedicin, skolhälsovård, företagshälsovård, dykmedicin och infektionsmedicin.
+
+        // Infotext
+        section.features-icons.text-center
+            .container
+                h2.mb-4 Vår verksamhet
+
+                .row.justify-content-around
+                    .col-lg-4
+                        .features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
+                            .features-icons-icon.d-flex
+                                i(style="font-size: 70").fas.fa-baby.m-auto.text-primary
+                            h4 Barn- och ungdomsmedicin
+                            p.lead
+                                | Vår läkare med specialisering inom barn- och ungdomsmedicin har arbetat som överläkare på barnklinik i 10 år och har mer än 20-årig erfarenhet inom skolhälsovård för både kommunala skolor och friskolor.
+                    .col-lg-4
+                        .features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
+                            .features-icons-icon.d-flex
+                                i(style="font-size: 70").fas.fa-lungs-virus.m-auto.text-primary
+                            h4 Infektions-, flyg- och dykmedicin
+                            p.lead 
+                                | Vår läkare med specialisering inom infektionsmedicin, företagshälsovård, flygmedicin och dykmedicin har också lång erfarenhet av arbete inom landsting som överläkare och inom statlig tjänst. 
+                    .col-lg-4
+                        .features-icons-item.mx-auto.mb-0.mb-lg-3
+                            .features-icons-icon.d-flex
+                                i(style="font-size: 70").fas.fa-school.m-auto.text-primary
+                            h4 Skolhälsovård
+                            p.lead
+                                | Inom skolhälsovård är våra konsultläkare erfarna barnläkare eller företagsläkare.
 
         // Icons Grid
         section.features-icons.bg-light.text-center
             .container
-                .row
-                    .col-lg-4
+                h2.mb-2 Utlåtanden och intyg
+                p.lead.mb-3.pb-3
+                    | Hos oss kan du få hjälp vid behov av olika typer av medicinska utlåtanden och intyg, exempelvis inom
+
+                .row.justify-content-around
+                    .col-lg-2.col-md-4
                         .features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
                             .features-icons-icon.d-flex
-                                i.bi-window.m-auto.text-primary
-                            h3 Fully Responsive
-                            p.lead.mb-0 This theme will look great on any device, no matter the size!
-                    .col-lg-4
+                                i(style="font-size: 70").fas.fa-taxi.m-auto.text-primary
+                            h4 Körkortstillstånd, alla klasser
+                    .col-lg-2.col-md-4
                         .features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
                             .features-icons-icon.d-flex
-                                i.bi-layers.m-auto.text-primary
-                            h3 Bootstrap 5 Ready
-                            p.lead.mb-0 Featuring the latest build of the new Bootstrap 5 framework!
-                    .col-lg-4
+                                i(style="font-size: 70").fas.fa-swimming-pool.m-auto.text-primary
+                            h4 Yrkesdykning &amp; sportdykning
+                    .col-lg-2.col-md-4
                         .features-icons-item.mx-auto.mb-0.mb-lg-3
                             .features-icons-icon.d-flex
-                                i.bi-terminal.m-auto.text-primary
-                            h3 Easy to Use
-                            p.lead.mb-0 Ready to use with your own content, or customize the source files!
+                                i(style="font-size: 70").fas.fa-subway.m-auto.text-primary
+                            h4 Tågförare &amp; motsvarande
+                    .col-lg-2.col-md-4
+                        .features-icons-item.mx-auto.mb-0.mb-lg-3
+                            .features-icons-icon.d-flex
+                                i(style="font-size: 70").fas.fa-heartbeat.m-auto.text-primary
+                            h4 Försäkringar, liv/pension
+                    .col-lg-2.col-md-4
+                        .features-icons-item.mx-auto.mb-0.mb-lg-3
+                            .features-icons-icon.d-flex
+                                i(style="font-size: 70").fas.fa-horse.m-auto.text-primary
+                            h4 Travlicenser
 
         // Image Showcases
         section.showcase
             .container-fluid.p-0
                 .row.g-0
-                    .col-lg-6.order-lg-2.text-white.showcase-img(style="background-image: url('assets/img/bg-showcase-1.jpg');")
+                    .col-lg-6.order-lg-2.text-white.showcase-img(style="background-image: url('assets/img/homepage/stock1.jpg');")
                     .col-lg-6.order-lg-1.my-auto.showcase-text
-                        h2 Fully Responsive Design
+                        h2 Läkarresurser
                         p.lead.mb-0
-                            | When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!
+                            | Vi erbjuder läkarresurser inom barn- och ungdomsmedicin, skolhälsovård, infektionsmedicin, företagshälsovård, dykmedicin och Event Medicine.
                 .row.g-0
-                    .col-lg-6.text-white.showcase-img(style="background-image: url('assets/img/bg-showcase-2.jpg');")
+                    .col-lg-6.text-white.showcase-img(style="background-image: url('assets/img/homepage/stock3.jpg');")
                     .col-lg-6.my-auto.showcase-text
-                        h2 Updated For Bootstrap 5
+                        h2 Skolläkartjänster
                         p.lead.mb-0
-                            | Newly improved, and full of great utility classes, Bootstrap 5 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 5!
+                            | Mångårig erfarenhet av skolhälsovårdsarbete, skolläkarinsatser i Bodens Kommun, Kalix kommun, Luleå kommun, Kiruna kommun, Pajala kommun och Älvsby kommun samt på friskolor i Boden, Luleå, Skellefteå, Kiruna och Piteå. Vi har även uppdrag i Stockholmsregionen sedan 2012. Vi har resurser för fler uppdrag inom skolhälsovården tack vare medarbetare med lång erfarenhet.
                 .row.g-0
-                    .col-lg-6.order-lg-2.text-white.showcase-img(style="background-image: url('assets/img/bg-showcase-3.jpg');")
+                    .col-lg-6.order-lg-2.text-white.showcase-img(style="background-image: url('assets/img/homepage/stock5.jpg');")
                     .col-lg-6.order-lg-1.my-auto.showcase-text
-                        h2 Easy to Use & Customize
+                        h2 Allmänna hälsoundersökningar samt intyg för juridiska processer
                         p.lead.mb-0
-                            | Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!
+                            | Förutom läkarresurser inom specialiteterna ovan erbjuder vi möjlighet till utbildningar inom dessa områden. Vi kan skräddarsy föreläsningar efter behov. Vi har erfarenhet av olika datajournalsystem, bland annat VAS, Profdoc JIII, Profdoc Vision, Mellior, PMO, BMS, Take Care och stor vana vid journalföring på data.
+                .row.g-0
+                    .col-lg-6.text-white.showcase-img(style="background-image: url('assets/img/homepage/stock4.jpg');")
+                    .col-lg-6.my-auto.showcase-text
+                        h2 Utbildningar
+                        p.lead.mb-0
+                            | Vi erbjuder utbildningar och föreläsningar i många områden inom hälso- och sjukvård samt medicinska utbildningar, men även handledarutbildningar. Vi föreläser på vårdhögskolor och universitet samt i privata företag och organisationer.
+                .row.g-0
+                    .col-lg-6.order-lg-2.text-white.showcase-img(style="background-image: url('assets/img/homepage/stock2.jpg');")
+                    .col-lg-6.order-lg-1.my-auto.showcase-text
+                        h2 Om oss
+                        p.lead.mb-0
+                            | Stjärnholm Medical AB har F-skattsedel och ansvarsförsäkringar enligt Läkarförbundets rekommendation för privatläkare.#[br]#[br]Stjärnholm Medical AB strävar efter att minimera sin miljöpåverkan genom både lång- och kortsiktig planering. Företaget har sitt säte i Bodens kommun, Mejselvägen 11, 961 38 Boden.
 
         // People
         include people
@@ -92,7 +149,12 @@ html(lang='en')
             .container.position-relative
                 .row.justify-content-center
                     .col-xl-6
-                        h2.mb-4 Ready to get started? Sign up now!
+                        h2.mb-4 Vi är stolta sponsorer av
+                        ul(style='list-style: none;').mb-2
+                            li Sävast AIF ungdomsfotboll
+                            li Bodens Ridklubb
+                            li Bodens Karateklubb
+                            li BBK-Sim
                         
         // Footer
         include footer
